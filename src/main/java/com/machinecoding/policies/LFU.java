@@ -29,6 +29,7 @@ public class LFU<K> implements EvictionPolicy<K> {
                 minKey = entry.getKey();
             }
         }
+        System.out.println("evicted key is : " + minKey);
         return minKey;
     }
 }

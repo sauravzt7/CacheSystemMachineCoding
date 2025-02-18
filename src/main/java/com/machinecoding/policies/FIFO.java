@@ -1,5 +1,7 @@
 package com.machinecoding.policies;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -19,7 +21,7 @@ public class FIFO<K> implements EvictionPolicy<K> {
 
     @Override
     public K evictKey() {
-        if(queue.isEmpty()){
+        if(queue.isEmpty()) {
             throw new IllegalStateException("Eviction attempted without any keys in cache.");
         }
         return queue.poll();

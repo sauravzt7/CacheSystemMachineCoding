@@ -1,11 +1,16 @@
 package com.machinecoding.policies;
 
+import com.machinecoding.backend.SQLiteStorageBackend;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class LRU<K> implements EvictionPolicy<K> {
 
     private final Map<K, Boolean> accessOrder;
+    private static final Logger logger = LoggerFactory.getLogger(LRU.class);
 
 
     public LRU(){
@@ -22,6 +27,7 @@ public class LRU<K> implements EvictionPolicy<K> {
         if(accessOrder.isEmpty()){
             throw new IllegalStateException("Eviction attempted without any keys in cache.");
         }
+        logger.info("evicted key is : " + accessOrder.keySet().iterator().next());
         return accessOrder.keySet().iterator().next();
     }
 
