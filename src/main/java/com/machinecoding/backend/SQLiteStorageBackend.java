@@ -9,10 +9,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SQLiteStorageBackend<K, V> implements StorageBackend<K, CacheEntry<V>> {
+
+
     private final String databaseUrl;
     private final String tableName;
     private static final Logger logger = LoggerFactory.getLogger(SQLiteStorageBackend.class);
-
 
     public SQLiteStorageBackend(String databaseUrl, String tableName) {
         this.databaseUrl = databaseUrl;
@@ -96,6 +97,10 @@ public class SQLiteStorageBackend<K, V> implements StorageBackend<K, CacheEntry<
 
     @Override
     public Map<K, CacheEntry<V>> load() {
+        return load(databaseUrl, tableName);
+    }
+
+    public static <K, V> Map<K, CacheEntry<V>> load(String databaseUrl, String tableName) {
         Map<K, CacheEntry<V>> data = new HashMap<>();
         String query = String.format("SELECT key, value, expiration_time FROM %s", tableName);
         try (Connection connection = DriverManager.getConnection(databaseUrl);
