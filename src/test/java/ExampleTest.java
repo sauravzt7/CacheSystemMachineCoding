@@ -7,9 +7,9 @@ git checkout main
 
 
 //import com.machinecoding.cache.Cache;
-//import com.machinecoding.policies.FIFO;
-//import com.machinecoding.policies.LFU;
-//import com.machinecoding.policies.LRU;
+//import com.machinecoding.policies.eviciton.FIFO;
+//import com.machinecoding.policies.eviciton.LFU;
+//import com.machinecoding.policies.eviciton.LRU;
 //import org.junit.jupiter.api.Test;
 //
 //import static org.junit.Assert.assertEquals;

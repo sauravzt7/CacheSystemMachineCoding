@@ -1,4 +1,4 @@
-package com.machinecoding.policies;
+package com.machinecoding.policies.write;
 
 import com.machinecoding.backend.StorageBackend;
 import com.machinecoding.factory.StorageBackendFactory;

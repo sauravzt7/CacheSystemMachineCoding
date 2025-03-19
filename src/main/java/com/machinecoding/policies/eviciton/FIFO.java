@@ -1,6 +1,4 @@
-package com.machinecoding.policies;
-
-import org.w3c.dom.ls.LSOutput;
+package com.machinecoding.policies.eviciton;
 
 import java.util.LinkedList;
 import java.util.Queue;

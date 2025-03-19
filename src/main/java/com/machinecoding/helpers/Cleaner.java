@@ -27,7 +27,7 @@ public class Cleaner<K, V> {
 
             Iterator<Map.Entry<K, CacheEntry<V>>> iterator = internalMap.entrySet().iterator();
             while (iterator.hasNext()) {
-                logger.info("Removing expired entries key: {}, value: {}", iterator.next().getKey(), iterator.next().getValue());
+                logger.info("Removing expired entries key: {}, value: {}", iterator.next().getKey(), iterator.next().getValue().getValue());
                 Map.Entry<K, CacheEntry<V>> entry = iterator.next();
                 if (entry.getValue().isExpired()) {
                     iterator.remove(); // Remove expired entry from the map

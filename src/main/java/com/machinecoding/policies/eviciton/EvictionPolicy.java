@@ -1,4 +1,4 @@
-package com.machinecoding.policies;
+package com.machinecoding.policies.eviciton;
 
 public interface EvictionPolicy<K> {
 

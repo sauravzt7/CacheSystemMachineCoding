@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class SQLiteStorageBackend<K, V> implements StorageBackend<K, CacheEntry<V>> {
 
@@ -66,7 +67,7 @@ public class SQLiteStorageBackend<K, V> implements StorageBackend<K, CacheEntry<
         } catch (SQLException e) {
             throw new RuntimeException("Failed to retrieve data from SQLite database", e);
         }
-        return null; // Entry not found
+        return null;
     }
 
     @Override
@@ -101,7 +102,7 @@ public class SQLiteStorageBackend<K, V> implements StorageBackend<K, CacheEntry<
     }
 
     public static <K, V> Map<K, CacheEntry<V>> load(String databaseUrl, String tableName) {
-        Map<K, CacheEntry<V>> data = new HashMap<>();
+        Map<K, CacheEntry<V>> data = new ConcurrentHashMap<>();
         String query = String.format("SELECT key, value, expiration_time FROM %s", tableName);
         try (Connection connection = DriverManager.getConnection(databaseUrl);
              Statement statement = connection.createStatement();

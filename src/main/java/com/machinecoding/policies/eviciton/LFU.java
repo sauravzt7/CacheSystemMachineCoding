@@ -1,4 +1,4 @@
-package com.machinecoding.policies;
+package com.machinecoding.policies.eviciton;
 
 import java.util.HashMap;
 import java.util.Map;

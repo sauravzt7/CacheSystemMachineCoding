@@ -1,12 +1,9 @@
-package com.machinecoding.policies;
+package com.machinecoding.policies.write;
 
 import com.machinecoding.backend.StorageBackend;
-import com.machinecoding.cache.Cache;
 import com.machinecoding.factory.StorageBackendFactory;
-import com.machinecoding.model.CacheEntry;
-import com.machinecoding.storage.PersistentStorage;
 
-public class WriteThroughPolicy<K, V> implements WritePolicy<K, V>{
+public class WriteThroughPolicy<K, V> implements WritePolicy<K, V> {
     private StorageBackend<K, V> storageBackend;
 
     public WriteThroughPolicy() {

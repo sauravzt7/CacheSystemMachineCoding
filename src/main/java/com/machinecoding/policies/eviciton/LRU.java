@@ -1,6 +1,5 @@
-package com.machinecoding.policies;
+package com.machinecoding.policies.eviciton;
 
-import com.machinecoding.backend.SQLiteStorageBackend;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -77,3 +77,6 @@ get(2) -> -1  # Not found
 - Provide **test cases** demonstrating correctness.
 - Share the solution on the **Discord group before 20 Feb** for evaluation.
 
+## Problems 
+- How to solve the data type issues while reading and writing to the persistent storage
+- 
